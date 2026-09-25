@@ -49,7 +49,7 @@ pipeline{
         stage('docker tag'){
             steps{
                 sh '''
-                docker tag ${IMAGE} ${IMAGE}:${BUILD_NUMBER}
+                docker tag dev-app ${IMAGE}:${BUILD_NUMBER}
                 '''
             }
         }
