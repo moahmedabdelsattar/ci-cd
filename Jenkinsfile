@@ -63,8 +63,8 @@ pipeline{
         stage('run app'){
             steps{
                 sh '''
-                docker stop dev-app
-                docker rm dev-app
+                docker stop dev-app || true
+                docker rm dev-app || true
                 docker run -d -p 5000:8081 --name dev-app ${IMAGE}:${BUILD_NUMBER}
                 '''
                 
