@@ -65,7 +65,7 @@ pipeline{
                 sh '''
                 docker stop dev-app
                 docker rm dev-app
-                docker run -d -p 5000:8081 --name dev-app dev-app:latest
+                docker run -d -p 5000:8081 --name dev-app ${IMAGE}:${BUILD_NUMBER}
                 '''
                 
             }
