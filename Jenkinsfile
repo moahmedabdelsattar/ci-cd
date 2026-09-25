@@ -1,8 +1,9 @@
 pipeline{
     agent any 
-    
     environment{
-        IMAGE= "mohamedabdelsattar12/dev"
+            IMAGE= "dev-app"
+    }
+    
     }
     stages{
         stage('check'){
@@ -14,6 +15,14 @@ pipeline{
                 '''
             }
         }
+        stage('build image'){
+            steps{
+                sh '''
+                docker build -t dev-app .
+                ... 
+            }
+        }
+                                 
         stage('check image'){
             steps{
                 sh '''
