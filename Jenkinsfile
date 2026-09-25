@@ -1,7 +1,7 @@
 pipeline{
     agent any 
     environment{
-            IMAGE= "mohamedabdelsattar12/dev"
+            IMAGE= "mohamedabdelsattar12/dev-app"
     }
     
     stages{
