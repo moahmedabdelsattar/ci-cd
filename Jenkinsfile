@@ -49,7 +49,7 @@ pipeline{
         stage('docker tag'){
             steps{
                 sh '''
-                docker tag dev-app ${IMAGE}:${BUILD_NUMBER}
+                docker tag dev-app:latest ${IMAGE}:${BUILD_NUMBER}
                 '''
             }
         }
@@ -65,7 +65,7 @@ pipeline{
                 sh '''
                 docker stop dev-app
                 docker rm dev-app
-                docker run -d -p 5000:8081 --name dev-app dev-app
+                docker run -d -p 5000:8081 --name dev-app dev-app:latest
                 '''
                 
             }
