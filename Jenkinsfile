@@ -1,7 +1,7 @@
 pipeline{
     agent any 
     environment{
-            IMAGE= "dev-app"
+            IMAGE= "mohamedabdelsattar12/dev"
     }
     
     stages{
@@ -25,7 +25,7 @@ pipeline{
         stage('check image'){
             steps{
                 sh '''
-                docker image ls ${IMAGE}
+                docker image ls dev-app
                 '''
             }
         }
@@ -49,7 +49,7 @@ pipeline{
         stage('docker tag'){
             steps{
                 sh '''
-                docker tag ${IMAGE}:latest ${IMAGE}:${BUILD_NUMBER}
+                docker tag ${IMAGE} ${IMAGE}:${BUILD_NUMBER}
                 '''
             }
         }
