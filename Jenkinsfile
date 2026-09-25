@@ -4,7 +4,6 @@ pipeline{
             IMAGE= "dev-app"
     }
     
-    }
     stages{
         stage('check'){
             steps{
@@ -15,11 +14,11 @@ pipeline{
                 '''
             }
         }
-        stage('build image'){
+         stage('build image'){
             steps{
                 sh '''
                 docker build -t dev-app .
-                ... 
+                '''
             }
         }
                                  
